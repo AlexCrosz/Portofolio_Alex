@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portofolio Informatics Student</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; background: #f4f4f4; color: #333;
+  }
+  header {
+    background: #1e88e5; color: white; padding: 1.5rem;
+    text-align: center; font-size: 1.5rem;
+  }
+  nav {
+    background: #1565c0;
+    display: flex;
+    justify-content: center;
+  }
+  nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+  }
+  nav button:hover,
+  nav button.active {
+    background: #0d47a1;
+  }
+  section {
+    display: none;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    border-bottom: 2px solid #1e88e5;
+    padding-bottom: 0.5rem;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+  a {
+    color: #1565c0;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .contact-item {
+    margin-bottom: 0.5rem;
+  }
+  .project-item {
+    margin-bottom: 0.7rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Portofolio Informatics Student</h1>
+</header>
+
+<nav id="nav-menu">
+  <button class="active" data-target="profile">Profil</button>
+  <button data-target="contact">Kontak</button>
+  <button data-target="education">Pendidikan</button>
+  <button data-target="skills">Keahlian</button>
+  <button data-target="organization">Organisasi</button>
+  <button data-target="projects">Proyek</button>
+</nav>
+
+<section id="profile" class="active">
+  <h2>Profil</h2>
+  <p>
+    A final-year student majoring in Informatics, I am passionate about Object Oriented Programming and skilled in Python and web development. I also have solid experience in Unity game development. I aim to leverage my knowledge and skills to contribute effectively in software development projects and continue growing in the tech industry.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Kontak</h2>
+  <div class="contact-item">📞 +62-878-8101-9258</div>
+  <div class="contact-item">🌐 <a href="http://www.reallygreatsite.com" target="_blank" rel="noopener noreferrer">www.reallygreatsite.com</a></div>
+  <div class="contact-item">✉️ <a href="mailto:alex26gurren@gmail.com">alex26gurren@gmail.com</a></div>
+  <div class="contact-item">📍 Kabupaten Bandung Barat, Kecamatan Cisarua</div>
+</section>
+
+<section id="education">
+  <h2>Pendidikan</h2>
+  <p><strong>Institut Teknologi Nasional Bandung</strong> | 2022 - Present</p>
+  <p>Bachelor of Science in Informatics</p>
+  <p>GPA: 3.57/4.00</p>
+</section>
+
+<section id="skills">
+  <h2>Keahlian</h2>
+  <ul>
+    <li>Microsoft Office (Microsoft Excel, Microsoft Word)</li>
+    <li>Web Development (Laravel, Node.js)</li>
+    <li>Programming Languages (Python, C#, Java)</li>
+    <li>Game Development (Unity)</li>
+    <li>Mobile Development (Flutter)</li>
+    <li>GitHub</li>
+    <li>Cloud Computing (AWS)</li>
+  </ul>
+</section>
+
+<section id="organization">
+  <h2>Organisasi</h2>
+  <p><strong>Himpunan Mahasiswa Informatika (HMIF)</strong><br/>
+    Institut Teknologi Nasional Bandung</p>
+  <ul>
+    <li>Staff Of PSDM | September 2023 - May 2024</li>
+    <li>Staff Of MSDM | June 2024 - December 2024</li>
+    <li>Staff Of Sponsorship | February 2025 - Now</li>
+  </ul>
+  <p><strong>Persekutuan Mahasiswa Kristen (PMK)</strong><br/>
+    Institut Teknologi Nasional Bandung</p>
+  <p>Chairperson Of PMK Itenas | September 2024 - Now</p>
+</section>
+
+<section id="projects">
+  <h2>Proyek</h2>
+  <ul>
+    <li class="project-item">Developed a landing page website for a UMKM (sijamon.id)</li>
+    <li class="project-item">Built a parking website application using Laravel framework</li>
+    <li class="project-item">Created a fire-extinguishing robot using IoT technology</li>
+    <li class="project-item">Developed an emotion detection image processing model using KNN and HOG algorithms</li>
+    <li class="project-item">Designed and developed a sales application using Flutter</li>
+    <li class="project-item">Designed the system architecture for a parking application</li>
+    <li class="project-item">Created a 2D game using Unity</li>
+    <li class="project-item">Developed a 3D real-time strategy (RTS) game with Unity</li>
+    <li class="project-item">Constructed an RC tank with control and monitoring through a mobile application</li>
+  </ul>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('section');
+
+  buttons.forEach(button =>
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      button.classList.add('active');
+      const target = button.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
+    })
+  );
+</script>
+
+</body>
+</html>
