@@ -3,164 +3,212 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portofolio Informatics Student</title>
+<title>Portofolio Alexander Augustnata Palisungan</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0; background: #f4f4f4; color: #333;
-  }
-  header {
-    background: #1e88e5; color: white; padding: 1.5rem;
-    text-align: center; font-size: 1.5rem;
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
   }
   nav {
-    background: #1565c0;
-    display: flex;
-    justify-content: center;
-  }
-  nav button {
-    background: transparent;
-    border: none;
-    color: white;
-    font-weight: bold;
+    background-color: #1c1c1c;
     padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 1rem;
+    display: flex;
+    gap: 2rem;
   }
-  nav button:hover,
-  nav button.active {
-    background: #0d47a1;
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
   }
-  section {
-    display: none;
-    padding: 2rem;
+  nav a:hover {
+    color: #27ae60;
+  }
+
+  main {
     max-width: 900px;
     margin: 2rem auto;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    padding: 1rem;
   }
-  section.active {
-    display: block;
+
+  /* Profile container */
+  #profile {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
   }
-  h2 {
-    border-bottom: 2px solid #1e88e5;
-    padding-bottom: 0.5rem;
+
+  /* Decorative swirl behind photo */
+  #profile::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: 250px;
+    border: 10px solid #d4b79a;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: 0;
+    transform: rotate(20deg);
   }
-  ul {
-    list-style-type: disc;
-    padding-left: 2rem;
+
+  /* Foto profil */
+  #profile img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 8px 10px 15px rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 2;
   }
-  a {
-    color: #1565c0;
+
+  /* Text container beside photo */
+  .profile-text {
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Name with green underline highlight */
+  .profile-text h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0 0 0.3rem 0;
+    position: relative;
+    display: inline-block;
+  }
+  /* green highlight underline */
+  .profile-text h1::after {
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 60%;
+    background-color: #27ae60;
+    bottom: 6px;
+    left: 0;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  /* Position / title */
+  .profile-text h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Social media icons container */
+  .social-icons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .social-icons a {
+    color: #27ae60;
+    font-size: 1.8rem;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
-  a:hover {
-    text-decoration: underline;
+  .social-icons a:hover {
+    color: #1e8449;
   }
-  .contact-item {
-    margin-bottom: 0.5rem;
+
+  /* Profile description text */
+  .profile-text p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
   }
-  .project-item {
-    margin-bottom: 0.7rem;
+
+  /* Responsive: stacked on mobile */
+  @media (max-width: 700px) {
+    #profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #profile::before {
+      display: none;
+    }
+    .profile-text h1 {
+      font-size: 2.4rem;
+    }
+    .profile-text h2 {
+      font-size: 1.1rem;
+    }
+    .profile-text p {
+      font-size: 1rem;
+    }
   }
 </style>
+<!-- FontAwesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
-<header>
-  <h1>Portofolio Informatics Student</h1>
-</header>
-
-<nav id="nav-menu">
-  <button class="active" data-target="profile">Profil</button>
-  <button data-target="contact">Kontak</button>
-  <button data-target="education">Pendidikan</button>
-  <button data-target="skills">Keahlian</button>
-  <button data-target="organization">Organisasi</button>
-  <button data-target="projects">Proyek</button>
+<nav>
+  <a href="#profile">Profil</a>
+  <a href="#contact">Kontak</a>
+  <a href="#education">Pendidikan</a>
+  <a href="#skills">Keahlian</a>
+  <a href="#organization">Organisasi</a>
+  <a href="#projects">Proyek</a>
 </nav>
 
-<section id="profile" class="active">
-  <h2>Profil</h2>
-  <p>
-    A final-year student majoring in Informatics, I am passionate about Object Oriented Programming and skilled in Python and web development. I also have solid experience in Unity game development. I aim to leverage my knowledge and skills to contribute effectively in software development projects and continue growing in the tech industry.
-  </p>
-</section>
+<main>
+  <section id="profile">
+    <img src="img\profil.jpg" alt="Foto Alexander Augustnata Palisungan" />
+    <div class="profile-text">
+      <h1>Alexander Augustnata Palisungan</h1>
+      <h2>Final-Year Informatics Student</h2>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/alex.palisungan" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/alex_palisungan" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alexander-palisungan" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p>
+        I am passionate about Object Oriented Programming and skilled in Python, web development, and Unity game development. I aim to leverage my skills to contribute effectively in software projects and grow in the tech industry.
+      </p>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Kontak</h2>
-  <div class="contact-item">📞 +62-878-8101-9258</div>
-  <div class="contact-item">🌐 <a href="http://www.reallygreatsite.com" target="_blank" rel="noopener noreferrer">www.reallygreatsite.com</a></div>
-  <div class="contact-item">✉️ <a href="mailto:alex26gurren@gmail.com">alex26gurren@gmail.com</a></div>
-  <div class="contact-item">📍 Kabupaten Bandung Barat, Kecamatan Cisarua</div>
-</section>
-
-<section id="education">
-  <h2>Pendidikan</h2>
-  <p><strong>Institut Teknologi Nasional Bandung</strong> | 2022 - Present</p>
-  <p>Bachelor of Science in Informatics</p>
-  <p>GPA: 3.57/4.00</p>
-</section>
-
-<section id="skills">
-  <h2>Keahlian</h2>
-  <ul>
-    <li>Microsoft Office (Microsoft Excel, Microsoft Word)</li>
-    <li>Web Development (Laravel, Node.js)</li>
-    <li>Programming Languages (Python, C#, Java)</li>
-    <li>Game Development (Unity)</li>
-    <li>Mobile Development (Flutter)</li>
-    <li>GitHub</li>
-    <li>Cloud Computing (AWS)</li>
-  </ul>
-</section>
-
-<section id="organization">
-  <h2>Organisasi</h2>
-  <p><strong>Himpunan Mahasiswa Informatika (HMIF)</strong><br/>
-    Institut Teknologi Nasional Bandung</p>
-  <ul>
-    <li>Staff Of PSDM | September 2023 - May 2024</li>
-    <li>Staff Of MSDM | June 2024 - December 2024</li>
-    <li>Staff Of Sponsorship | February 2025 - Now</li>
-  </ul>
-  <p><strong>Persekutuan Mahasiswa Kristen (PMK)</strong><br/>
-    Institut Teknologi Nasional Bandung</p>
-  <p>Chairperson Of PMK Itenas | September 2024 - Now</p>
-</section>
-
-<section id="projects">
-  <h2>Proyek</h2>
-  <ul>
-    <li class="project-item">Developed a landing page website for a UMKM (sijamon.id)</li>
-    <li class="project-item">Built a parking website application using Laravel framework</li>
-    <li class="project-item">Created a fire-extinguishing robot using IoT technology</li>
-    <li class="project-item">Developed an emotion detection image processing model using KNN and HOG algorithms</li>
-    <li class="project-item">Designed and developed a sales application using Flutter</li>
-    <li class="project-item">Designed the system architecture for a parking application</li>
-    <li class="project-item">Created a 2D game using Unity</li>
-    <li class="project-item">Developed a 3D real-time strategy (RTS) game with Unity</li>
-    <li class="project-item">Constructed an RC tank with control and monitoring through a mobile application</li>
-  </ul>
-</section>
-
-<script>
-  const buttons = document.querySelectorAll('nav button');
-  const sections = document.querySelectorAll('section');
-
-  buttons.forEach(button =>
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      sections.forEach(sec => sec.classList.remove('active'));
-
-      button.classList.add('active');
-      const target = button.getAttribute('data-target');
-      document.getElementById(target).classList.add('active');
-    })
-  );
-</script>
+  <!-- Placeholder sections for other portfolio areas -->
+  <section id="contact" style="margin-top: 4rem; color: #ccc;">
+    <h2>Kontak</h2>
+    <p>Isi bagian kontak Anda di sini.</p>
+  </section>
+  <section id="education" style="margin-top: 4rem; color: #ccc;">
+    <h2>Pendidikan</h2>
+    <p>Isi bagian pendidikan Anda di sini.</p>
+  </section>
+  <section id="skills" style="margin-top: 4rem; color: #ccc;">
+    <h2>Keahlian</h2>
+    <p>Isi bagian keahlian Anda di sini.</p>
+  </section>
+  <section id="organization" style="margin-top: 4rem; color: #ccc;">
+    <h2>Organisasi</h2>
+    <p>Isi bagian organisasi Anda di sini.</p>
+  </section>
+  <section id="projects" style="margin-top: 4rem; color: #ccc;">
+    <h2>Proyek</h2>
+    <p>Isi bagian proyek Anda di sini.</p>
+  </section>
+</main>
 
 </body>
 </html>
