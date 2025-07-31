@@ -12,7 +12,7 @@ export default function Contact() {
             <FaWhatsapp /> WhatsApp
           </a>
         </li>
-        <li>Email: alexpalisungan@example.com</li>
+        <li>Email: alex26gurren@gmail.com</li>
       </ul>
       {/* Optional contact form */}
     </section>
