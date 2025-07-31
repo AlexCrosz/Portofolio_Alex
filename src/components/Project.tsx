@@ -28,10 +28,6 @@ export default function Projects() {
         <h3>ADT E-Parking Website</h3>
         <p>An Automated parking system using laravel</p>
       </div>
-      <div className="project-card">
-        <h3>ADT E-Parking Website</h3>
-        <p>An Automated parking system using laravel</p>
-      </div>
     </section>
   );
 }
